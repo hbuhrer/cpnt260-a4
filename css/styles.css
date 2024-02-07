@@ -1,0 +1,376 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+
+/* Body Styles */
+body {
+  font-family: "Gluten", Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* List Styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header Styles */
+header {
+  position: relative;
+  height: 20vh;
+  max-height: 20vh;
+  background-image: url(../assets/banana-background.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-color: #212020;
+  background-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  text-align: center;
+  border-bottom: solid 15px green;
+}
+
+/* Header H1 Styles */
+header h1 {
+  margin-top: 0em;
+  font-size: 5em;
+  margin-bottom: 0em;
+  padding: 1em;
+  padding-bottom: 1em;
+}
+
+/* H2 Styles */
+h2 {
+  color: green;
+}
+
+/* Right-side Heading H2 Styles */
+.right-side-heading h2 {
+  text-align: right;
+}
+
+/* Banana Logo Styles */
+.banana-logo {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.5em;
+  transition: transform 200ms ease-in;
+}
+
+/* Desktop Logo Hover Styles */
+.logo-desktop:hover {
+  transform: scale(1.05);
+  transition: transform 200ms ease-in;
+}
+
+/* Logo Desktop Styles */
+.logo-desktop {
+  transition: transform 200ms ease-in;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+/* Adjusted Logo Dropdown Styles */
+figure {
+  display: none;
+  margin: 0;
+}
+
+/* Navigation Menu Styles */
+.nav-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: yellow;
+  padding: 1.5em;
+  z-index: 1;
+}
+
+/* Navigation Menu Anchor and List Item Styles */
+.nav-main a,
+.nav-main li {
+  color: #212020;
+  text-decoration: none;
+  list-style: none;
+  display: inline-flex;
+  padding-right: 0.7em;
+}
+
+.nav-main a.current {
+  color: green;
+}
+
+.nav-desktop a {
+  font-weight: 600;
+}
+
+/* Navigation Menu Anchor Hover Styles */
+.nav-main a:hover {
+  color: green;
+}
+
+/* Navigation Links List Item Hover Styles */
+.nav-desktop li:hover {
+  color: green;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in;
+}
+
+#active {
+  color: green;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in;
+}
+
+/* Main Section Styles */
+main {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Text Styles */
+.main-text {
+  text-align: center;
+  max-width: 70%;
+  align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.main-text h2 {
+  font-size: 3em;
+}
+
+.main-text p {
+  font-size: 1.3em;
+  padding-bottom: 2em;
+}
+
+/* Three Card Section Styles */
+.three-card {
+  display: flex;
+  flex-direction: row;
+  color: #212020;
+  border: none;
+  background-color: green;
+  width: 100%;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.three-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.three-card figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+  margin: 1em;
+  margin-right: 2em;
+  margin-left: 2em;
+  border-radius: 10px;
+  background-color: yellow;
+  transition: transform 200ms ease-in;
+  text-align: center;
+}
+
+.three-card figure img {
+  padding-bottom: 1em;
+}
+
+.three-card figure:hover {
+  transform: scale(1.05);
+  transition: transform 200ms ease-in;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 0.3em;
+  background-color: #212020;
+  color: yellow;
+  font-size: 1em;
+  margin-top: auto;
+  z-index: 1;
+}
+
+/* SVG Styles */
+.cls-1 {
+  fill: #603d03;
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6,
+.cls-7 {
+  stroke-width: 0px;
+}
+
+.cls-2 {
+  fill: #442d03;
+}
+
+.cls-3 {
+  fill: #c9c40a;
+}
+
+.cls-4 {
+  fill: #b7bb10;
+}
+
+.cls-5 {
+  fill: #9ca118;
+}
+
+.cls-6 {
+  fill: #eacb3e;
+}
+
+.cls-7 {
+  fill: #fcd939;
+}
+
+/* Media Query for Screen Widths up to 900px */
+@media only screen and (max-width: 900px) {
+  /* Navigation Menu Adjustments */
+  .nav-main figure {
+    display: inline;
+    color: #212020;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .nav-main figcaption {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    font-weight: 800;
+    align-items: center;
+    transform: translateX(-14%);
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-main {
+    justify-content: center;
+  }
+
+  .nav-main a,
+  .nav-main li {
+    padding-right: 0;
+    text-align: center;
+    gap: 1em;
+  }
+
+  .nav-main figure > figcaption:hover {
+    color: green;
+    transform: scale(1.05) translateX(-14%);
+    transition: transform 200ms ease-in;
+  }
+
+  .nav-main figure li:hover {
+    color: green;
+    font-weight: 700;
+    transform: scale(1.05);
+    transition: transform 200ms ease-in;
+  }
+
+  /* Three Card Section Adjustments */
+  .three-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: #212020;
+    align-items: center;
+  }
+
+  .three-card figure {
+    max-width: max-content;
+  }
+
+  /* Main Text Adjustments */
+  .main-text h2 {
+    font-size: 2em;
+  }
+
+  .main-text p {
+    font-size: 1.1em;
+    padding-bottom: 1em;
+  }
+
+  /* Footer Adjustments */
+  footer {
+    font-size: 1em;
+  }
+
+  /* Logo Adjustments */
+  .logo-desktop {
+    display: none;
+  }
+
+  /* Mobile Dropdown Menu */
+  .mobile-dropdown {
+    display: none;
+    position: relative;
+    padding: 0;
+  }
+
+  /* Mobile Dropdown List Styles */
+  figure > ul {
+    display: inline;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Mobile Dropdown List Item Display on Hover */
+  figure:hover ul,
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header H1 Adjustments */
+  header h1 {
+    font-size: 3em;
+  }
+
+  /* Header Anchor Adjustments */
+  header a {
+    font-size: 0.8em;
+  }
+
+  /* Main Section Flex Direction Adjustments */
+  main {
+    flex-direction: column;
+  }
+}
