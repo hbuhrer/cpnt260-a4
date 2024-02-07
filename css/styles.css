@@ -52,19 +52,22 @@ h2 {
   color: green;
 }
 
-/* Right-side Heading H2 Styles */
-.right-side-heading h2 {
-  text-align: right;
+.dropdown {
+    display: none;
 }
 
 /* Banana Logo Styles */
-.banana-logo {
+.banana-logo-desktop {
   width: 48px;
   height: 48px;
   margin: 0;
   padding: 0;
   padding-right: 0.5em;
   transition: transform 200ms ease-in;
+}
+
+.mobile-logo {
+  display: none;
 }
 
 /* Desktop Logo Hover Styles */
@@ -101,8 +104,9 @@ figure {
 }
 
 /* Navigation Menu Anchor and List Item Styles */
-.nav-main a,
-.nav-main li {
+.nav-desktop a,
+.nav-desktop li,
+.desktop-logo {
   color: #212020;
   text-decoration: none;
   list-style: none;
@@ -259,48 +263,120 @@ footer {
 /* Media Query for Screen Widths up to 900px */
 @media only screen and (max-width: 900px) {
   /* Navigation Menu Adjustments */
-  .nav-main figure {
-    display: inline;
-    color: #212020;
-    text-decoration: none;
-    list-style: none;
+  .nav-main {
+    display: block;
   }
 
-  .nav-main figcaption {
+  .nav-main .mobile-logo {
+    justify-content: flex-start;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  .mobile-logo {
     display: flex;
-    flex-direction: row;
-    font-size: 1.2em;
-    font-weight: 800;
-    align-items: center;
-    transform: translateX(-14%);
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    transition: none;
+  }
+  
+  .mobile-nav ul {
+    max-height: 0px;
+    overflow: hidden;
+    list-style: none;
+    transition: all 1s cubic-bezier(.325, 1, .22, 1);
+  }
+  
+  .mobile-nav li {
+    color: #fff;
+    font-size: 16px;
+    padding: 0.8em 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobile-nav li a {
+    text-decoration: none;
+    color: #212020;
+    transition: transform 200ms ease-in
+  }
+  .mobile-nav li a:hover{
+    color: green;
+    transform: scale(1.05);
+    transition: transform 200ms ease-in;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+  }
+  
+  input[type=checkbox]:checked ~ nav ul {
+    height: auto;
+    max-height: 12rem;
+    transition: all 1s cubic-bezier(.5, 1, .22, 1);
+    width: 200px;
+  }
+  
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 2.5em;
+    right: 1em;
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(.19, 1, .22, 1);
+  }
+  
+  .line {
+    position: absolute;
+    display: block;
+    background: #3d3d3d;
+    width: 18px;
+    height: .15rem;
+    border-radius: .2rem;
+    left: 0;
+    transition: all .6s cubic-bezier(.5, .1, 0, 1.2);
+  }
+  
+  .line-1 {
+    top: 0;
+  }
+  
+  .line-2 {
+    top: 7px;
+    width: 14px;
+    transform: translateX(2px);
+    -webkit-transform: translateX(2px);
+  }
+  
+  .line-3 {
+    top: 14px;
+  }
+  
+  input[type=checkbox]:checked ~ label .line-1 {
+    top: 0px;
+    width: 22px;
+    transform: translateX(-11px) rotate(-45deg) translateY(12px);
+  }
+  
+  input[type=checkbox]:checked ~ label .line-2 {
+    opacity: 0;
+  }
+  
+  input[type=checkbox]:checked ~ label .line-3 {
+    top: 14px;
+    width: 22px;
+    transform: translateX(-8px) rotate(45deg) translateY(-8px);
   }
 
   .nav-desktop {
     display: none;
-  }
-
-  .nav-main {
-    justify-content: center;
-  }
-
-  .nav-main a,
-  .nav-main li {
-    padding-right: 0;
-    text-align: center;
-    gap: 1em;
-  }
-
-  .nav-main figure > figcaption:hover {
-    color: green;
-    transform: scale(1.05) translateX(-14%);
-    transition: transform 200ms ease-in;
-  }
-
-  .nav-main figure li:hover {
-    color: green;
-    font-weight: 700;
-    transform: scale(1.05);
-    transition: transform 200ms ease-in;
   }
 
   /* Three Card Section Adjustments */
@@ -334,29 +410,6 @@ footer {
   /* Logo Adjustments */
   .logo-desktop {
     display: none;
-  }
-
-  /* Mobile Dropdown Menu */
-  .mobile-dropdown {
-    display: none;
-    position: relative;
-    padding: 0;
-  }
-
-  /* Mobile Dropdown List Styles */
-  figure > ul {
-    display: inline;
-    position: absolute;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* Mobile Dropdown List Item Display on Hover */
-  figure:hover ul,
-  li {
-    display: flex;
-    flex-direction: column;
   }
 
   /* Header H1 Adjustments */
